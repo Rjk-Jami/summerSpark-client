@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import { Collapse } from 'react-collapse';
@@ -8,8 +8,10 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
-
+import { ThemeContext } from '../../provider/ThemeProvider/ThemeProvider';
 const InstructorsMentor = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+console.log(theme)
   const [classesInfo, setClassesInfo] = useState([]);
   const [isButtonCollapseOpen, setIsButtonCollapseOpen] = useState([]);
   const [isCollapseLoading, setIsCollapseLoading] = useState([]);
@@ -52,7 +54,7 @@ const InstructorsMentor = () => {
         
      
       <PageTitle title={"Our Instructors"}></PageTitle>
-      <Zoom><h2 className='text-center text-2xl font-bold my-3'>Decade of Teaching <span className='text-warning'>Experience</span></h2></Zoom>
+      <h2 className='text-center text-2xl font-bold my-3'>Decade of Teaching <span className={`${(theme === "light" ? "text-red-200" :"text-green-300") }`}>Experience</span></h2>
 
       <div  className="grid  grid-cols-1 lg:grid-cols-3 gap-5 w-3/4 mx-auto">
         {instructorsMentor.map((instructor, index) => (

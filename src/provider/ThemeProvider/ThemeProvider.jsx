@@ -1,14 +1,16 @@
 // ThemeContext.js
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('synthwave');
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
-    setTheme(theme === 'synthwave' ? 'emerald' : 'synthwave');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    
   };
+ 
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

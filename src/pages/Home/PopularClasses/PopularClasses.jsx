@@ -55,7 +55,7 @@ const PopularClasses = () => {
       }
     return (<>
         <TitleStyle first={"Our Top"} second={"Classes"}></TitleStyle>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  ">
         {classes.map((item, i)=>
             <div  data-theme="pastel"  key={i}>
              <Fade>

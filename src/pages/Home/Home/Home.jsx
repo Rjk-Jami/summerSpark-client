@@ -9,7 +9,7 @@ const Home = () => {
 
     
     return (
-        <div>
+        <div className='max-w-screen-lg mx-auto'>
            <Helmet>
                 <title>SummerSpark | Home</title>
             </Helmet> 

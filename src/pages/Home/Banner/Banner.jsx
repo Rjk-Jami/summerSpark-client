@@ -26,35 +26,7 @@ const Banner = () => {
 
     return (
         <div className="">
-            <div className=" ">
-                <Swiper
-                    scrollbar={{
-                        hide: true,
-                    }}
-                    modules={[Scrollbar]}
-                    className="mySwiper "
-                >
-    {
-        yogas.map((yoga, index) =>
-            <SwiperSlide key={index}>
-                <div className="hero min-h-screen bg-cover bg-center" style={{ backgroundImage: `url("${yoga.image}")` }}>
-                    <div className="hero-overlay bg-opacity-60"></div>
-                    <div className="hero-content text-center text-neutral-content">
-                        <div className="max-w-xl">
-                            <Fade><h1 className=" text-3xl md:text-5xl font-bold">{yoga?.name}</h1></Fade>
-                            <Zoom><p className="">{yoga?.details}</p></Zoom>
-                            <button className="animate__rubberBand animate__animated btn btn-warning disabled"><FaAngleDoubleLeft></FaAngleDoubleLeft> Step : {index + 1}<FaAngleDoubleRight /></button>
-                        </div>
-                    </div>
-                </div>
-
-            </SwiperSlide>
-        )
-                    }
-
-
-                </Swiper>
-            </div>
+            
            
 
         </div>

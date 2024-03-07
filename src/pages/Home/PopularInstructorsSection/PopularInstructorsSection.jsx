@@ -17,7 +17,7 @@ const PopularInstructorsSection = () => {
     return (
         <div>
             <TitleStyle first={"Our Honorable"} second={"Teacher"}></TitleStyle>
-          <div  className="grid  grid-cols-1 lg:grid-cols-3 gap-5 w-3/4 mx-auto">
+          <div  className="grid  grid-cols-1 lg:grid-cols-3 gap-5 ">
         {instructorsMentor.slice(0,6).map((instructor, index) => (
           <Fade key={instructor._id}>
             <Card  key={instructor._id} className=''>
