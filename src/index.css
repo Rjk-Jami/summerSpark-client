@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.drawer-side a.active{
+    color: white;
+}
+
+
+
+.drawer-side a{
+    background-color: transparent;
+}
+.text-red-500{
+    color: crimson;
+}
+body .react-bubbly-transitions__bubbly-link {
+    color: rgb(255, 255, 255);
+  }
+  body .react-bubbly-transitions__bubbly-link.active {
+    color: rgb(105, 255, 138);
+  }
+  
