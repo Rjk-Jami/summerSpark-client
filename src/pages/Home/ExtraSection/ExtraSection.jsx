@@ -28,7 +28,7 @@ const ExtraSection = () => {
 
     return (
         <>
-           <div className=" my-7">
+           {/* <div className=" my-7">
            <div className=" flex flex-row justify-center items-center gap-6">
                 <Fade>
                 <div className="card w-96 bg-base-100 shadow-xl image-full">
@@ -64,7 +64,7 @@ const ExtraSection = () => {
                 </div>
             </div>
 
-           </div>
+           </div> */}
         
         </>
     );

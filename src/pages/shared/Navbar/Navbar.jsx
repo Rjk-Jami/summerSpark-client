@@ -50,7 +50,7 @@ const Navbar = () => {
 
 
       <NavLink>
-        <button type="button" onClick={handleToggleTheme} >
+        <button className='my-2' type="button" onClick={handleToggleTheme} >
           {isDarkMode ? <FaSun /> : <FaMoon />}
         </button>
         
@@ -79,7 +79,7 @@ const Navbar = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto relative">
-      <div className={`navbar fixed mt-0 z-10 top-0 text-white  backdrop-blur-xl bg-black/30 max-w-screen-xl rounded-full`}>
+      <div className={`navbar fixed mt-0 z-10 top-0 text-white  backdrop-blur-xl bg-black/30 xl:max-w-screen-xl rounded-full`}>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -96,11 +96,11 @@ const Navbar = () => {
               <img src="https://i.ibb.co/0r2pGbd/pngtree-girl-meditating-sports-illustration-png-im.png" />
             </div>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Tasnia-YMS</a>
+          <a className="font-bold normal-case text-xl ms-3">Summer&nbsp;Spark</a>
         </div>
 
         <div className="navbar-end">
-          <ul className="menu font-semibold text-lg space-x-4 menu-horizontal px-1 hidden lg:flex items-center">
+          <ul className="menu font-semibold text-lg space-x-4 menu-horizontal px-1 hidden lg:flex items-center ">
             {navbar}
           </ul>
         </div>
