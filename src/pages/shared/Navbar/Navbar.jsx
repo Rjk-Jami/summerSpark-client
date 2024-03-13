@@ -53,25 +53,25 @@ const Navbar = () => {
         <button className='my-2' type="button" onClick={handleToggleTheme} >
           {isDarkMode ? <FaSun /> : <FaMoon />}
         </button>
-        
+
       </NavLink>
       <div className="dropdown dropdown-bottom dropdown-end dropdown-hover">
-                    {
-                                        user ? <> {
-                                          user?.photoURL ? <img src={user?.photoURL} alt="" tabIndex={0} role="button" className="btn btn-circle btn-md md:btn-sm" /> : 
-                                          <><BsFillPersonFill  tabIndex={0} role="button" className="btn btn-circle  btn-md md:btn-sm w-full p-2 text-[#506ed8c9]"  ></BsFillPersonFill></>
-                                        }
-                                        <ul tabIndex={0} className=" dropdown-content z-[1] card card-compact p-2     rounded-box text-right before:mt-2 before:bg-transparent">
-                                        
-                                        <li className='w-auto'><NavLink to={'/dashboard/home'}  className="justify-start flex flex-row-reverse gap-2 items-center text-md text-white bg-black/30 hover:text-[#4D6DE3] rounded-none rounded-t cursor-pointer mt-1 " >
-                                            <FiSettings   className="font-semibold  " /><p>Dashboard</p></NavLink> </li>
-                                            <li className='w-auto'><div onClick={handleLogOut} className="justify-start flex flex-row-reverse gap-2 items-center text-md text-white bg-black/30 hover:text-[#4D6DE3] cursor-pointer rounded-none rounded-b" >
-                                            <TbLogout2   className="font-semibold  " /><p>logout</p></div> </li>
-                                            
-                                        </ul></> : <><NavLink to={'/login'}>Login / Register</NavLink></>
-                                    }
-                        
-                    </div>
+        {
+          user ? <> {
+            user?.photoURL ? <img src={user?.photoURL} alt="" tabIndex={0} role="button" className="btn btn-circle btn-md md:btn-sm" /> :
+              <><BsFillPersonFill tabIndex={0} role="button" className="btn btn-circle  btn-md md:btn-sm w-full p-2 text-[#506ed8c9]"  ></BsFillPersonFill></>
+          }
+            <ul tabIndex={0} className=" dropdown-content z-[1] card card-compact p-2     rounded-box text-right before:mt-2 before:bg-transparent">
+
+              <li className='w-auto'><NavLink to={'/dashboard/home'} className="justify-start flex flex-row-reverse gap-2 items-center text-md text-white bg-black/30 hover:text-[#4D6DE3] rounded-none rounded-t cursor-pointer mt-1 " >
+                <FiSettings className="font-semibold  " /><p>Dashboard</p></NavLink> </li>
+              <li className='w-auto'><div onClick={handleLogOut} className="justify-start flex flex-row-reverse gap-2 items-center text-md text-white bg-black/30 hover:text-[#4D6DE3] cursor-pointer rounded-none rounded-b" >
+                <TbLogout2 className="font-semibold  " /><p>logout</p></div> </li>
+
+            </ul></> : <><NavLink to={'/login'}>Login / Register</NavLink></>
+        }
+
+      </div>
     </>
   );
 
@@ -81,16 +81,29 @@ const Navbar = () => {
     <div className="max-w-screen-xl mx-auto relative">
       <div className={`navbar fixed mt-0 z-10 top-0 text-white  backdrop-blur-xl bg-black/30 xl:max-w-screen-xl rounded-full`}>
         <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+
+          <div className="drawer">
+            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content">
+              {/* Page content here */}
+              <label htmlFor="my-drawer" className="btn btn-ghost lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
-            </label>
-            <ul tabIndex={0} className="menu font-semibold menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              {navbar}
-            </ul>
+              </svg></label>
+            </div>
+            <div className="drawer-side z-30">
+              <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+              <ul className="menu p-4 w-80 min-h-full bg-base-200 text-lg">
+                {/* Sidebar content here */}
+                {navbar}
+
+              </ul>
+            </div>
+          
+
           </div>
+
+
           <div className="avatar">
             <div className="w-10 rounded">
               <img src="https://i.ibb.co/0r2pGbd/pngtree-girl-meditating-sports-illustration-png-im.png" />
